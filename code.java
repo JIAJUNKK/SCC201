@@ -73,56 +73,56 @@ class JiaJunDatabase {
             String UseDatabase = "use " + databaseName;
 		    statement.executeUpdate(UseDatabase);
 
-            statement.executeUpdate("DROP TABLE IF EXISTS ALBUM_SONGS");
-            statement.executeUpdate("DROP TABLE IF EXISTS ALBUM");
-            statement.executeUpdate("DROP TABLE IF EXISTS SONG");
-            statement.executeUpdate("DROP TABLE IF EXISTS CONTRACT");
-            statement.executeUpdate("DROP TABLE IF EXISTS ARTIST");
-            statement.executeUpdate("DROP TABLE IF EXISTS RECORD_LABEL");
+            statement.executeUpdate("DROP TABLE IF EXISTS JAZZ_ALBUM_SONGS");
+            statement.executeUpdate("DROP TABLE IF EXISTS JAZZ_ALBUM");
+            statement.executeUpdate("DROP TABLE IF EXISTS JAZZ_SONG");
+            statement.executeUpdate("DROP TABLE IF EXISTS JAZZ_CONTRACT");
+            statement.executeUpdate("DROP TABLE IF EXISTS JAZZ_ARTIST");
+            statement.executeUpdate("DROP TABLE IF EXISTS JAZZ_RECORD_LABEL");
 
-            String createArtist = "CREATE TABLE IF NOT EXISTS ARTIST (" +
+            String createArtist = "CREATE TABLE IF NOT EXISTS JAZZ_ARTIST (" +
                 "ARTIST_ID VARCHAR(50) NOT NULL, " +
                 "ARTIST_NAME VARCHAR(50), " +
                 "ARTIST_DOB DATE, " + 
                 "ARTIST_DEBUT_DATE DATE, " +
                 "PRIMARY KEY (ARTIST_ID))";
 
-            String createSong = "CREATE TABLE IF NOT EXISTS SONG (" +
+            String createSong = "CREATE TABLE IF NOT EXISTS JAZZ_SONG (" +
                 "SONG_ID INT NOT NULL AUTO_INCREMENT, " +
                 "ARTIST_ID VARCHAR(50) NOT NULL, " +
                 "SONG_NAME VARCHAR(50), " +
                 "SONG_LENGTH TIME, " +
                 "PRIMARY KEY (SONG_ID, ARTIST_ID), " +
-                "FOREIGN KEY (ARTIST_ID) REFERENCES ARTIST(ARTIST_ID) ON DELETE RESTRICT)";
+                "FOREIGN KEY (ARTIST_ID) REFERENCES JAZZ_ARTIST(ARTIST_ID) ON DELETE RESTRICT)";
 
-            String createAlbum = "CREATE TABLE IF NOT EXISTS ALBUM (" +
+            String createAlbum = "CREATE TABLE IF NOT EXISTS JAZZ_ALBUM (" +
                 "ALBUM_ID INT NOT NULL, " +
                 "ARTIST_ID VARCHAR(50) NOT NULL, " +
                 "ALBUM_NAME VARCHAR(50), " +
                 "PUBLISH_DATE DATE, " +
                 "PRIMARY KEY (ALBUM_ID, ARTIST_ID), " +
-                "FOREIGN KEY (ARTIST_ID) REFERENCES ARTIST(ARTIST_ID) ON DELETE RESTRICT)";
+                "FOREIGN KEY (ARTIST_ID) REFERENCES JAZZ_ARTIST(ARTIST_ID) ON DELETE RESTRICT)";
             
-            String createAlbumSongs = "CREATE TABLE IF NOT EXISTS ALBUM_SONGS (" +
+            String createAlbumSongs = "CREATE TABLE IF NOT EXISTS JAZZ_ALBUM_SONGS (" +
                 "ALBUM_ID INT NOT NULL, " +
                 "SONG_ID INT NOT NULL AUTO_INCREMENT, " +
                 "PRIMARY KEY (ALBUM_ID, SONG_ID), " +
-                "FOREIGN KEY (ALBUM_ID) REFERENCES ALBUM(ALBUM_ID) ON DELETE RESTRICT, " +
-                "FOREIGN KEY (SONG_ID) REFERENCES SONG(SONG_ID) ON DELETE RESTRICT, " +
+                "FOREIGN KEY (ALBUM_ID) REFERENCES JAZZ_ALBUM(ALBUM_ID) ON DELETE RESTRICT, " +
+                "FOREIGN KEY (SONG_ID) REFERENCES JAZZ_SONG(SONG_ID) ON DELETE RESTRICT, " +
                 "UNIQUE (ALBUM_ID, SONG_ID))";
             
 
-            String createRecordLabel = "CREATE TABLE IF NOT EXISTS RECORD_LABEL (" +
+            String createRecordLabel = "CREATE TABLE IF NOT EXISTS JAZZ_RECORD_LABEL (" +
                 "RECORD_LABEL_ID VARCHAR(10) NOT NULL, " +
                 "RECORD_LABEL_NAME VARCHAR(50), " +
                 "PRIMARY KEY (RECORD_LABEL_ID))";
             
-            String createContract = "CREATE TABLE IF NOT EXISTS CONTRACT (" +
+            String createContract = "CREATE TABLE IF NOT EXISTS JAZZ_CONTRACT (" +
                 "RECORD_LABEL_ID VARCHAR(10), " +
                 "ARTIST_ID VARCHAR(50), " +
                 "PRIMARY KEY (RECORD_LABEL_ID, ARTIST_ID), " +
-                "FOREIGN KEY (ARTIST_ID) REFERENCES ARTIST(ARTIST_ID) ON DELETE RESTRICT, " +
-                "FOREIGN KEY (RECORD_LABEL_ID) REFERENCES RECORD_LABEL(RECORD_LABEL_ID) ON DELETE RESTRICT)";
+                "FOREIGN KEY (ARTIST_ID) REFERENCES JAZZ_ARTIST(ARTIST_ID) ON DELETE RESTRICT, " +
+                "FOREIGN KEY (RECORD_LABEL_ID) REFERENCES JAZZ_RECORD_LABEL(RECORD_LABEL_ID) ON DELETE RESTRICT)";
 
             statement.executeUpdate(createArtist);
             statement.executeUpdate(createSong);
@@ -147,7 +147,7 @@ class JiaJunDatabase {
 		    statement.executeUpdate(UseDatabase);
             int rowCount = jazzData[0].length - 1;
 
-            String insertArtist = "INSERT IGNORE INTO ARTIST (ARTIST_ID, ARTIST_NAME, ARTIST_DOB, ARTIST_DEBUT_DATE) VALUES (?, ?, ?, ?)";
+            String insertArtist = "INSERT IGNORE INTO JAZZ_ARTIST (ARTIST_ID, ARTIST_NAME, ARTIST_DOB, ARTIST_DEBUT_DATE) VALUES (?, ?, ?, ?)";
             try (PreparedStatement ps = connection.prepareStatement(insertArtist)) {
                 for (int j = 0; j < rowCount; j++) {
                     ps.setString(1, jazzData[0][j]);  
@@ -158,7 +158,7 @@ class JiaJunDatabase {
                 }
             }
 
-            String insertSong = "INSERT IGNORE INTO SONG (ARTIST_ID, SONG_NAME, SONG_LENGTH) VALUES (?, ?, ?)";
+            String insertSong = "INSERT IGNORE INTO JAZZ_SONG (ARTIST_ID, SONG_NAME, SONG_LENGTH) VALUES (?, ?, ?)";
             try (PreparedStatement ps = connection.prepareStatement(insertSong)) {
                 for (int j = 0; j < rowCount; j++) {
                     ps.setString(1, jazzData[0][j]);  
@@ -168,7 +168,7 @@ class JiaJunDatabase {
                 }
             }
             
-            String insertAlbum = "INSERT IGNORE INTO ALBUM (ALBUM_ID, ARTIST_ID, ALBUM_NAME, PUBLISH_DATE) VALUES (?, ?, ?, ?)";
+            String insertAlbum = "INSERT IGNORE INTO JAZZ_ALBUM (ALBUM_ID, ARTIST_ID, ALBUM_NAME, PUBLISH_DATE) VALUES (?, ?, ?, ?)";
             try (PreparedStatement ps = connection.prepareStatement(insertAlbum)) {
                 for (int j = 0; j < rowCount; j++) {
                     ps.setInt(1, Integer.valueOf(jazzData[2][j]));  
@@ -179,7 +179,7 @@ class JiaJunDatabase {
                 }
             }
 
-            String insertAlbumSongs = "INSERT IGNORE INTO ALBUM_SONGS (ALBUM_ID) VALUES (?)";
+            String insertAlbumSongs = "INSERT IGNORE INTO JAZZ_ALBUM_SONGS (ALBUM_ID) VALUES (?)";
             try (PreparedStatement ps = connection.prepareStatement(insertAlbumSongs)) {
                 for (int j = 0; j < rowCount; j++) {
                     ps.setInt(1, Integer.valueOf(jazzData[2][j]));     
@@ -187,7 +187,7 @@ class JiaJunDatabase {
                 }
             }
 
-            String insertRecordLabel = "INSERT IGNORE INTO RECORD_LABEL (RECORD_LABEL_ID, RECORD_LABEL_NAME) VALUES (?, ?)";
+            String insertRecordLabel = "INSERT IGNORE INTO JAZZ_RECORD_LABEL (RECORD_LABEL_ID, RECORD_LABEL_NAME) VALUES (?, ?)";
             try (PreparedStatement ps = connection.prepareStatement(insertRecordLabel)) {
                 for (int j = 0; j < rowCount; j++) {
                     ps.setString(1, jazzData[9][j]);     
@@ -196,7 +196,7 @@ class JiaJunDatabase {
                 }
             }
        
-            String insertContract = "INSERT IGNORE INTO CONTRACT (RECORD_LABEL_ID, ARTIST_ID) VALUES (?, ?)";
+            String insertContract = "INSERT IGNORE INTO JAZZ_CONTRACT (RECORD_LABEL_ID, ARTIST_ID) VALUES (?, ?)";
             try (PreparedStatement ps = connection.prepareStatement(insertContract)) {
                 for (int j = 0; j < rowCount; j++) {
                     ps.setString(1, jazzData[9][j]);     
@@ -221,8 +221,8 @@ class JiaJunDatabase {
 
             String query = 
             "SELECT ARTIST_ID, ARTIST_NAME " +
-            "FROM ARTIST WHERE ARTIST_ID IN ( " + 
-                "SELECT ARTIST_ID FROM SONG " +
+            "FROM JAZZ_ARTIST WHERE ARTIST_ID IN ( " + 
+                "SELECT ARTIST_ID FROM JAZZ_SONG " +
                 "GROUP BY ARTIST_ID " +
                 "HAVING AVG(TIME_TO_SEC(SONG_LENGTH)) > 180 " +
             ");";
@@ -251,10 +251,10 @@ class JiaJunDatabase {
 		    statement.executeUpdate(UseDatabase);
 
             String query = 
-            "SELECT ALBUM.ARTIST_ID, ARTIST.ARTIST_NAME, COUNT(*) AS ALBUM_NUMBER " +
-            "FROM ALBUM, ARTIST " + 
-            "WHERE ALBUM.ARTIST_ID = ARTIST.ARTIST_ID " +
-            "GROUP BY ALBUM.ARTIST_ID " +
+            "SELECT JAZZ_ALBUM.ARTIST_ID, JAZZ_ARTIST.ARTIST_NAME, COUNT(*) AS ALBUM_NUMBER " +
+            "FROM JAZZ_ALBUM, JAZZ_ARTIST " + 
+            "WHERE JAZZ_ALBUM.ARTIST_ID = JAZZ_ARTIST.ARTIST_ID " +
+            "GROUP BY JAZZ_ALBUM.ARTIST_ID " +
             "HAVING COUNT(*) > 6;";
 
             ResultSet resultSet = statement.executeQuery(query);
@@ -283,7 +283,7 @@ class JiaJunDatabase {
 
             String query = 
             "SELECT C.RECORD_LABEL_ID, R.RECORD_LABEL_NAME, COUNT(C.ARTIST_ID) AS TOTAL_NUMBER_OF_ARTISTS_SIGNED " +
-            "FROM CONTRACT C, RECORD_LABEL R " + 
+            "FROM JAZZ_CONTRACT C, JAZZ_RECORD_LABEL R " + 
             "WHERE C.RECORD_LABEL_ID = R.RECORD_LABEL_ID " +
             "GROUP BY C.RECORD_LABEL_ID, R.RECORD_LABEL_NAME;";
 
@@ -312,10 +312,10 @@ class JiaJunDatabase {
 		    statement.executeUpdate(UseDatabase);
 
             String query = 
-            "DELETE FROM ARTIST A WHERE A.ARTIST_ID IN ( " +
-            "SELECT ALBUM.ARTIST_ID " +
-            "FROM ALBUM " +
-            "GROUP BY ALBUM.ARTIST_ID " +
+            "DELETE FROM JAZZ_ARTIST A WHERE A.ARTIST_ID IN ( " +
+            "SELECT JAZZ_ALBUM.ARTIST_ID " +
+            "FROM JAZZ_ALBUM " +
+            "GROUP BY JAZZ_ALBUM.ARTIST_ID " +
             "HAVING COUNT(*) < 6 )";
 
             System.out.println("\n4. Deleting Artist(s) with less than 6 Albums");
@@ -339,10 +339,10 @@ class JiaJunDatabase {
 		    statement.executeUpdate(UseDatabase);
 
             String query = 
-            "DELETE FROM ALBUM WHERE ALBUM.ALBUM_ID IN (" +
-                "SELECT ALBUM_SONGS.ALBUM_ID FROM SONG S, ALBUM_SONGS " +
-                "WHERE ALBUM_SONGS.SONG_ID = S.SONG_ID " +
-                "GROUP BY ALBUM_SONGS.ALBUM_ID " +
+            "DELETE FROM JAZZ_ALBUM WHERE JAZZ_ALBUM.ALBUM_ID IN (" +
+                "SELECT JAZZ_ALBUM_SONGS.ALBUM_ID FROM JAZZ_SONG S, JAZZ_ALBUM_SONGS " +
+                "WHERE JAZZ_ALBUM_SONGS.SONG_ID = S.SONG_ID " +
+                "GROUP BY JAZZ_ALBUM_SONGS.ALBUM_ID " +
                 "HAVING AVG(TIME_TO_SEC(S.SONG_LENGTH)) < 180" +
             ");";
 
@@ -361,37 +361,36 @@ class JiaJunDatabase {
         }
     }
 
-    public static void main(String[] args) {
+    public JiaJunDatabase() throws SQLException {
         String jazz = "38993171.csv";
-        JiaJunDatabase JiaJunReader = new JiaJunDatabase();
-        System.out.println("Reading the " + jazz + " now");
-        String[][] jazzData = JiaJunReader.readCSVFile(jazz);
-        JiaJunReader.createTable();
-        JiaJunReader.populateTable(jazzData);
+
+        String[][] jazzData = readCSVFile(jazz);
+        createTable();
+        populateTable(jazzData);
+
 
         System.out.println("\n\n");
         System.out.println("=".repeat(100));
         System.out.printf("%65s\n", "STARTING EXECUTING QUERIES NOW...");
         System.out.println("=".repeat(100));
         System.out.println("\n\n");
-
-        //Query 1
-        JiaJunReader.getArtistWithSongMoreThan3Minutes();
+        
+        getArtistWithSongMoreThan3Minutes();
         //Query 2
-        JiaJunReader.getArtistWithMoreThan5Albums();
+        getArtistWithMoreThan5Albums();
         //Query 3
-        JiaJunReader.getArtistCountWithRecordLabel();
+        getArtistCountWithRecordLabel();
 
         //Deletion 1
-        JiaJunReader.deleteArtistWithLessThan5Albums();
+        deleteArtistWithLessThan5Albums();
         //Deletion 2
-        JiaJunReader.deleteAlbumWithAverageSongDurationMoreThan3Minutes();
+        deleteAlbumWithAverageSongDurationMoreThan3Minutes();
     }
 }
 
 class MiguelDatabase {
     private static final String DB_URL = "jdbc:mysql://localhost:3306";
-    private static final String DB_NAME = "student_38751852";
+    private static final String DB_NAME = "SCC201_Coursework";
     private Statement stmt;
     private Connection conn;
 
@@ -423,7 +422,6 @@ class MiguelDatabase {
             conn = DriverManager.getConnection(DB_URL + "/" + DB_NAME);
             this.stmt = conn.createStatement();
         } catch (SQLException e) {
-            e.printStackTrace();
         }
     }
 
@@ -499,7 +497,6 @@ class MiguelDatabase {
                         pstmt.setInt(4, Integer.parseInt(data[6]));
                         pstmt.executeUpdate();
                     } catch (ParseException e) {
-                        throw new RuntimeException(e);
                     }
                 }
 
@@ -514,7 +511,6 @@ class MiguelDatabase {
                 }
             }
         } catch (IOException | SQLException e) {
-            e.printStackTrace();
         }
     }
 
