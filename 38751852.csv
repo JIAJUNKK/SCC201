@@ -1,0 +1,219 @@
+﻿SongID,Title,SingerID,AlbumID,Title,ReleaseDate,SingerID,SingerID,StageName,RealName,NationalityID,DebutYear,NationalityID,CountryName,MusicStreamers
+null,null,null,null,null,null,null,null,null,null,null,null,1,Puerto Rico,500000
+null,null,null,null,null,null,null,null,null,null,null,null,2,Colombia,9200000
+null,null,null,null,null,null,null,1,Bad Bunny,Benito Antonio Martínez Ocasio,1,2018,null,null,null
+null,null,null,null,null,null,null,2,Daddy Yankee,Ramón Luis Ayala Rodríguez,1,1995,null,null,null
+null,null,null,null,null,null,null,3,Don Omar,William Omar Landrón Rivera,1,2003,null,null,null
+null,null,null,null,null,null,null,4,J Balvin,José Álvaro Osorio Balvin,2,2004,null,null,null
+null,null,null,null,null,null,null,5,Karol G,Carolina Giraldo Navarro,2,2006,null,null,null
+null,null,null,null,null,null,null,6,Tainy,Marcos Efraín Masís Fernández,1,2020,null,null,null
+null,null,null,null,null,null,null,7,Rauw Alejandro,Raúl Alejandro Ocasio Ruiz,1,2014,null,null,null
+null,null,null,null,null,null,null,8,Mora,Gabriel Mora Quintero,1,2021,null,null,null
+null,null,null,1,Un Verano Sin Ti,06/05/2022,1,null,null,null,null,null,null,null,null
+null,null,null,2,Barrio Fino (Bonus Track Version),13/07/2004,2,null,null,null,null,null,null,null,null
+null,null,null,3,nadie sabe lo que va a pasar maÔøΩana,13/10/2023,1,null,null,null,null,null,null,null,null
+null,null,null,4,The Last Don II,16/06/2015,3,null,null,null,null,null,null,null,null
+null,null,null,5,Vibras,25/05/2018,4,null,null,null,null,null,null,null,null
+null,null,null,6,X 100PRE,24/12/2018,1,null,null,null,null,null,null,null,null
+null,null,null,7,MAÑANA SERÁ BONITO,24/02/2023,5,null,null,null,null,null,null,null,null
+null,null,null,8,DATA,29/06/2023,6,null,null,null,null,null,null,null,null
+null,null,null,9,SATURNO,11/11/2022,7,null,null,null,null,null,null,null,null
+null,null,null,10,Primer Dia de Clases,05/02/2021,8,null,null,null,null,null,null,null,null
+null,null,null,11,LEGENDADDY,25/03/2022,2,null,null,null,null,null,null,null,null
+1,Moscow Mule,1,null,null,null,null,null,null,null,null,null,null,null,null
+2,Después de la Playa,1,null,null,null,null,null,null,null,null,null,null,null,null
+3,Me Porto Bonito,1,null,null,null,null,null,null,null,null,null,null,null,null
+4,Tití Me Preguntó,1,null,null,null,null,null,null,null,null,null,null,null,null
+5,Un Ratito,1,null,null,null,null,null,null,null,null,null,null,null,null
+6,Yo No Soy Celoso,1,null,null,null,null,null,null,null,null,null,null,null,null
+7,Tarot,1,null,null,null,null,null,null,null,null,null,null,null,null
+8,Neverita,1,null,null,null,null,null,null,null,null,null,null,null,null
+9,La Corriente,1,null,null,null,null,null,null,null,null,null,null,null,null
+10,Efecto,1,null,null,null,null,null,null,null,null,null,null,null,null
+11,Party,1,null,null,null,null,null,null,null,null,null,null,null,null
+12,Aguacero,1,null,null,null,null,null,null,null,null,null,null,null,null
+13,Enséñame a Bailar,1,null,null,null,null,null,null,null,null,null,null,null,null
+14,Ojitos Lindos,1,null,null,null,null,null,null,null,null,null,null,null,null
+15,Dos Mil 16,1,null,null,null,null,null,null,null,null,null,null,null,null
+16,El Apagón,1,null,null,null,null,null,null,null,null,null,null,null,null
+17,Otro Atardecer,1,null,null,null,null,null,null,null,null,null,null,null,null
+18,Un Coco,1,null,null,null,null,null,null,null,null,null,null,null,null
+19,Andrea,1,null,null,null,null,null,null,null,null,null,null,null,null
+20,Me Fui de Vacaciones,1,null,null,null,null,null,null,null,null,null,null,null,null
+21,Un Verano Sin Ti,1,null,null,null,null,null,null,null,null,null,null,null,null
+22,Agosto,1,null,null,null,null,null,null,null,null,null,null,null,null
+23,Callaita,1,null,null,null,null,null,null,null,null,null,null,null,null
+24,Intro,2,null,null,null,null,null,null,null,null,null,null,null,null
+25,King Daddy,2,null,null,null,null,null,null,null,null,null,null,null,null
+26,Dale Caliente,2,null,null,null,null,null,null,null,null,null,null,null,null
+27,No Me Dejes Solo,2,null,null,null,null,null,null,null,null,null,null,null,null
+28,Gasolina,2,null,null,null,null,null,null,null,null,null,null,null,null
+29,Like You,2,null,null,null,null,null,null,null,null,null,null,null,null
+30,El Muro,2,null,null,null,null,null,null,null,null,null,null,null,null
+31,Lo Que Pasó Pasó,2,null,null,null,null,null,null,null,null,null,null,null,null
+32,Tu Príncipe,2,null,null,null,null,null,null,null,null,null,null,null,null
+33,Cuéntame,2,null,null,null,null,null,null,null,null,null,null,null,null
+34,Santifica Tus Escapularios,2,null,null,null,null,null,null,null,null,null,null,null,null
+35,Sabor a Melao,2,null,null,null,null,null,null,null,null,null,null,null,null
+36,El Empuje,2,null,null,null,null,null,null,null,null,null,null,null,null
+37,Qué Vas a Hacer?,2,null,null,null,null,null,null,null,null,null,null,null,null
+38,Salud y Vida,2,null,null,null,null,null,null,null,null,null,null,null,null
+39,Intermedio Gavilán,2,null,null,null,null,null,null,null,null,null,null,null,null
+40,Corazones,2,null,null,null,null,null,null,null,null,null,null,null,null
+41,Golpe de Estado,2,null,null,null,null,null,null,null,null,null,null,null,null
+42,2 Mujeres,2,null,null,null,null,null,null,null,null,null,null,null,null
+43,Saber Su Nombre,2,null,null,null,null,null,null,null,null,null,null,null,null
+44,Outro,2,null,null,null,null,null,null,null,null,null,null,null,null
+45,NADIE SABE,1,null,null,null,null,null,null,null,null,null,null,null,null
+46,MONACO,1,null,null,null,null,null,null,null,null,null,null,null,null
+47,FINA,1,null,null,null,null,null,null,null,null,null,null,null,null
+48,HIBIKI,1,null,null,null,null,null,null,null,null,null,null,null,null
+49,MR. OCTOBER,1,null,null,null,null,null,null,null,null,null,null,null,null
+50,CYBERTRUCK,1,null,null,null,null,null,null,null,null,null,null,null,null
+51,VOU 787,1,null,null,null,null,null,null,null,null,null,null,null,null
+52,SEDA,1,null,null,null,null,null,null,null,null,null,null,null,null
+53,GRACIAS POR NADA,1,null,null,null,null,null,null,null,null,null,null,null,null
+54,TELEFONO NUEVO,1,null,null,null,null,null,null,null,null,null,null,null,null
+55,BABY NUEVA,1,null,null,null,null,null,null,null,null,null,null,null,null
+56,MERCEDES CAROTA,1,null,null,null,null,null,null,null,null,null,null,null,null
+57,LOS PITS,1,null,null,null,null,null,null,null,null,null,null,null,null
+58,VUELVE CANDY B,1,null,null,null,null,null,null,null,null,null,null,null,null
+59,BATICANO,1,null,null,null,null,null,null,null,null,null,null,null,null
+60,NO ME QUIERO CASAR,1,null,null,null,null,null,null,null,null,null,null,null,null
+61,WHERE SHE GOES,1,null,null,null,null,null,null,null,null,null,null,null,null
+62,THUNDER Y LIGHTNING,1,null,null,null,null,null,null,null,null,null,null,null,null
+63,PERRO NEGRO,1,null,null,null,null,null,null,null,null,null,null,null,null
+64,EUROPA :(,1,null,null,null,null,null,null,null,null,null,null,null,null
+65,ACHO PR,1,null,null,null,null,null,null,null,null,null,null,null,null
+66,UN PREVIEW,1,null,null,null,null,null,null,null,null,null,null,null,null
+67,Soledad,3,null,null,null,null,null,null,null,null,null,null,null,null
+68,Guaya Guaya,3,null,null,null,null,null,null,null,null,null,null,null,null
+69,Perdido En Tus Ojos,3,null,null,null,null,null,null,null,null,null,null,null,null
+70,Callejero,3,null,null,null,null,null,null,null,null,null,null,null,null
+71,En Lo Oscuro,3,null,null,null,null,null,null,null,null,null,null,null,null
+72,Olvidar Que Somos Amigos,3,null,null,null,null,null,null,null,null,null,null,null,null
+73,Te Recordaré Bailando,3,null,null,null,null,null,null,null,null,null,null,null,null
+74,Dobla Rodilla,3,null,null,null,null,null,null,null,null,null,null,null,null
+75,Tírate Al Medio,3,null,null,null,null,null,null,null,null,null,null,null,null
+76,Bailando Bajo El Sol,3,null,null,null,null,null,null,null,null,null,null,null,null
+77,Sandunga,3,null,null,null,null,null,null,null,null,null,null,null,null
+78,Yo Soy De Aqui,3,null,null,null,null,null,null,null,null,null,null,null,null
+79,Vibras,4,null,null,null,null,null,null,null,null,null,null,null,null
+80,Mi Gente,4,null,null,null,null,null,null,null,null,null,null,null,null
+81,Ambiente,4,null,null,null,null,null,null,null,null,null,null,null,null
+82,Cuando Tú Quieras,4,null,null,null,null,null,null,null,null,null,null,null,null
+83,No Es Justo,4,null,null,null,null,null,null,null,null,null,null,null,null
+84,Ahora,4,null,null,null,null,null,null,null,null,null,null,null,null
+85,Brillo,4,null,null,null,null,null,null,null,null,null,null,null,null
+86,En Mí (Interlude),4,null,null,null,null,null,null,null,null,null,null,null,null
+87,En Mí,4,null,null,null,null,null,null,null,null,null,null,null,null
+88,Peligrosa,4,null,null,null,null,null,null,null,null,null,null,null,null
+89,Noches Pasadas,4,null,null,null,null,null,null,null,null,null,null,null,null
+90,Tu Verdad,4,null,null,null,null,null,null,null,null,null,null,null,null
+91,Dónde Estarás,4,null,null,null,null,null,null,null,null,null,null,null,null
+92,Machika,4,null,null,null,null,null,null,null,null,null,null,null,null
+93,NI BIEN NI MAL,1,null,null,null,null,null,null,null,null,null,null,null,null
+94,200 Mph,1,null,null,null,null,null,null,null,null,null,null,null,null
+95,¿Quien Tu Eres?,1,null,null,null,null,null,null,null,null,null,null,null,null
+96,Caro,1,null,null,null,null,null,null,null,null,null,null,null,null
+97,Tenemos Que Hablar,1,null,null,null,null,null,null,null,null,null,null,null,null
+98,Otra Noche en Miami,1,null,null,null,null,null,null,null,null,null,null,null,null
+99,Ser Bichote,1,null,null,null,null,null,null,null,null,null,null,null,null
+100,Si Estuviésemos Juntos,1,null,null,null,null,null,null,null,null,null,null,null,null
+101,Solo de Mi,1,null,null,null,null,null,null,null,null,null,null,null,null
+102,Cuando Perriabas,1,null,null,null,null,null,null,null,null,null,null,null,null
+103,La Romana,1,null,null,null,null,null,null,null,null,null,null,null,null
+104,Como Antes,1,null,null,null,null,null,null,null,null,null,null,null,null
+105,RLNDT,1,null,null,null,null,null,null,null,null,null,null,null,null
+106,Estamos Bien,1,null,null,null,null,null,null,null,null,null,null,null,null
+107,MIA,1,null,null,null,null,null,null,null,null,null,null,null,null
+108,MIENTRAS ME CURO DEL CORA,5,null,null,null,null,null,null,null,null,null,null,null,null
+109,X SI VOLVEMOS,5,null,null,null,null,null,null,null,null,null,null,null,null
+110,PERO TÚ,5,null,null,null,null,null,null,null,null,null,null,null,null
+111,BESTIES,5,null,null,null,null,null,null,null,null,null,null,null,null
+112,GUCCI LOS PAÑOS,5,null,null,null,null,null,null,null,null,null,null,null,null
+113,TQG,5,null,null,null,null,null,null,null,null,null,null,null,null
+114,TUS GAFITAS,5,null,null,null,null,null,null,null,null,null,null,null,null
+115,OJOS FERRARI,5,null,null,null,null,null,null,null,null,null,null,null,null
+116,MERCURIO,5,null,null,null,null,null,null,null,null,null,null,null,null
+117,GATÚBELA,5,null,null,null,null,null,null,null,null,null,null,null,null
+118,KÁRMIKA,5,null,null,null,null,null,null,null,null,null,null,null,null
+119,PROVENZA,5,null,null,null,null,null,null,null,null,null,null,null,null
+120,CAROLINA,5,null,null,null,null,null,null,null,null,null,null,null,null
+121,DAÑAMOS LA AMISTAD,5,null,null,null,null,null,null,null,null,null,null,null,null
+122,AMARGURA,5,null,null,null,null,null,null,null,null,null,null,null,null
+123,CAIRO,5,null,null,null,null,null,null,null,null,null,null,null,null
+124,MAÑANA SERÁ BONITO,5,null,null,null,null,null,null,null,null,null,null,null,null
+125,obstáculo,6,null,null,null,null,null,null,null,null,null,null,null,null
+126,PASIEMPRE,6,null,null,null,null,null,null,null,null,null,null,null,null
+127,Todavía,6,null,null,null,null,null,null,null,null,null,null,null,null
+128,FANTASMA | AVC,6,null,null,null,null,null,null,null,null,null,null,null,null
+129,MOJABI GHOST,6,null,null,null,null,null,null,null,null,null,null,null,null
+130,11 Y ONCE,6,null,null,null,null,null,null,null,null,null,null,null,null
+131,desde las 10 (KANY’S INTERLUDE),6,null,null,null,null,null,null,null,null,null,null,null,null
+132,mañana,6,null,null,null,null,null,null,null,null,null,null,null,null
+133,BUENOS AIRES,6,null,null,null,null,null,null,null,null,null,null,null,null
+134,COLMILLO,6,null,null,null,null,null,null,null,null,null,null,null,null
+135,LA BABY,6,null,null,null,null,null,null,null,null,null,null,null,null
+136,me jodi...,6,null,null,null,null,null,null,null,null,null,null,null,null
+137,VOLVER,6,null,null,null,null,null,null,null,null,null,null,null,null
+138,EN VISTO,6,null,null,null,null,null,null,null,null,null,null,null,null
+139,Lo Siento BB:/,6,null,null,null,null,null,null,null,null,null,null,null,null
+140,si preguntas por mi,6,null,null,null,null,null,null,null,null,null,null,null,null
+141,Sci-Fi,6,null,null,null,null,null,null,null,null,null,null,null,null
+142,CORLEONE INTERLUDE,6,null,null,null,null,null,null,null,null,null,null,null,null
+143,PARANORMAL,6,null,null,null,null,null,null,null,null,null,null,null,null
+144,SACRIFICIO,6,null,null,null,null,null,null,null,null,null,null,null,null
+145,SATURNO,7,null,null,null,null,null,null,null,null,null,null,null,null
+146,PUNTO 40,7,null,null,null,null,null,null,null,null,null,null,null,null
+147,MÁS DE UNA VEZ,7,null,null,null,null,null,null,null,null,null,null,null,null
+148,LEJOS DEL CIELO,7,null,null,null,null,null,null,null,null,null,null,null,null
+149,DEJAU',7,null,null,null,null,null,null,null,null,null,null,null,null
+150,GATAS,7,null,null,null,null,null,null,null,null,null,null,null,null
+151,PANTIES Y BRASIERES,7,null,null,null,null,null,null,null,null,null,null,null,null
+152,CAZADORES,7,null,null,null,null,null,null,null,null,null,null,null,null
+153,DECA' A LAS VEGAS (INTERLUDE),7,null,null,null,null,null,null,null,null,null,null,null,null
+154,QUÉ RICO CH**GAMOS,7,null,null,null,null,null,null,null,null,null,null,null,null
+155,RON COLA,7,null,null,null,null,null,null,null,null,null,null,null,null
+156,NO ME SUELTES,7,null,null,null,null,null,null,null,null,null,null,null,null
+157,VERDE MENTA,7,null,null,null,null,null,null,null,null,null,null,null,null
+158,CORAZÓN DESPEINADO,7,null,null,null,null,null,null,null,null,null,null,null,null
+159,DIME QUIÉN????,7,null,null,null,null,null,null,null,null,null,null,null,null
+160,RAULEETO (Skit),7,null,null,null,null,null,null,null,null,null,null,null,null
+161,DE CAROLINA,7,null,null,null,null,null,null,null,null,null,null,null,null
+162,LOKERA,7,null,null,null,null,null,null,null,null,null,null,null,null
+163,Primer Dia de Clases,8,null,null,null,null,null,null,null,null,null,null,null,null
+164,La Receta,8,null,null,null,null,null,null,null,null,null,null,null,null
+165,Tuyo,8,null,null,null,null,null,null,null,null,null,null,null,null
+166,Cuando Sera,8,null,null,null,null,null,null,null,null,null,null,null,null
+167,Volando,8,null,null,null,null,null,null,null,null,null,null,null,null
+168,512,8,null,null,null,null,null,null,null,null,null,null,null,null
+169,La Carita,8,null,null,null,null,null,null,null,null,null,null,null,null
+170,Que Tu Dice?,8,null,null,null,null,null,null,null,null,null,null,null,null
+171,Te Conoci Perriando,8,null,null,null,null,null,null,null,null,null,null,null,null
+172,Afuego,8,null,null,null,null,null,null,null,null,null,null,null,null
+173,Vacio,8,null,null,null,null,null,null,null,null,null,null,null,null
+174,Fin del Mundo,8,null,null,null,null,null,null,null,null,null,null,null,null
+175,En un Avion,8,null,null,null,null,null,null,null,null,null,null,null,null
+176,Desaparecer,8,null,null,null,null,null,null,null,null,null,null,null,null
+177,No Digas Nada,8,null,null,null,null,null,null,null,null,null,null,null,null
+178,Pégate - Remix,8,null,null,null,null,null,null,null,null,null,null,null,null
+179,LEGENDADDY,2,null,null,null,null,null,null,null,null,null,null,null,null
+180,CAMPEÓN,2,null,null,null,null,null,null,null,null,null,null,null,null
+181,REMIX,2,null,null,null,null,null,null,null,null,null,null,null,null
+182,PASATIEMPO,2,null,null,null,null,null,null,null,null,null,null,null,null
+183,RUMBATÓN,2,null,null,null,null,null,null,null,null,null,null,null,null
+184,X ÚLTIMA VEZ,2,null,null,null,null,null,null,null,null,null,null,null,null
+185,PARA SIEMPRE,2,null,null,null,null,null,null,null,null,null,null,null,null
+186,UNO QUITAO Y OTRO PUESTO,2,null,null,null,null,null,null,null,null,null,null,null,null
+187,TRUQUITO - Skit,2,null,null,null,null,null,null,null,null,null,null,null,null
+188,EL ABUSADOR DEL ABUSADOR,2,null,null,null,null,null,null,null,null,null,null,null,null
+189,ENCHULETIAO,2,null,null,null,null,null,null,null,null,null,null,null,null
+190,AGUA,2,null,null,null,null,null,null,null,null,null,null,null,null
+191,ZONA DEL PERREO,2,null,null,null,null,null,null,null,null,null,null,null,null
+192,HOT,2,null,null,null,null,null,null,null,null,null,null,null,null
+193,LA OLA,2,null,null,null,null,null,null,null,null,null,null,null,null
+194,BOMBÓN,2,null,null,null,null,null,null,null,null,null,null,null,null
+195,EL REY DE LO IMPERFECTO,2,null,null,null,null,null,null,null,null,null,null,null,null
+196,IMPARES,2,null,null,null,null,null,null,null,null,null,null,null,null
+197,BLOKE,2,null,null,null,null,null,null,null,null,null,null,null,null
