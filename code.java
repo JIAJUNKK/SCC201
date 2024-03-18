@@ -2,14 +2,20 @@ import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
 import java.sql.*;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.List;
-/*
-import java.time.LocalDate;
-import java.time.format.DateTimeFormatter;
-*/
 
-public class JiaJunCSVReader {
+
+public class code {
+    public static void main(String[] args) throws SQLException {
+        new JiaJunDatabase();
+        new MiguelDatabase();
+    }
+}
+
+class JiaJunDatabase {
     String jdbcURL = "jdbc:mariadb://localhost:3306/";
     String databaseName = "SCC201_Coursework";
 
@@ -357,7 +363,7 @@ public class JiaJunCSVReader {
 
     public static void main(String[] args) {
         String jazz = "38993171.csv";
-        JiaJunCSVReader JiaJunReader = new JiaJunCSVReader();
+        JiaJunDatabase JiaJunReader = new JiaJunDatabase();
         System.out.println("Reading the " + jazz + " now");
         String[][] jazzData = JiaJunReader.readCSVFile(jazz);
         JiaJunReader.createTable();
@@ -382,3 +388,183 @@ public class JiaJunCSVReader {
         JiaJunReader.deleteAlbumWithAverageSongDurationMoreThan3Minutes();
     }
 }
+
+class MiguelDatabase {
+    private static final String DB_URL = "jdbc:mysql://localhost:3306";
+    private static final String DB_NAME = "student_38751852";
+    private Statement stmt;
+    private Connection conn;
+
+    public MiguelDatabase() throws SQLException {
+        createDatabase();
+        if (conn == null) {
+            System.out.println("Error: Connection to the database could not be established.");
+            return;
+        }
+        createTables();
+        parseCSVAndInsertData("38751852.csv");
+
+        deleteNationality(1);
+        deleteSinger(1);
+
+        query1();
+        query2();
+
+        conn.close();
+    }
+
+    private void createDatabase() {
+        try {
+            conn = DriverManager.getConnection(DB_URL);
+            this.stmt = conn.createStatement();
+            stmt.executeUpdate("CREATE DATABASE IF NOT EXISTS " + DB_NAME);
+            System.out.println("Database " + DB_NAME + " created or already exists.");
+
+            conn = DriverManager.getConnection(DB_URL + "/" + DB_NAME);
+            this.stmt = conn.createStatement();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+    }
+
+    private void createTables() throws SQLException {
+        String createSingerTable = "CREATE TABLE IF NOT EXISTS Singer (" +
+                "SingerID INT AUTO_INCREMENT PRIMARY KEY," +
+                "StageName VARCHAR(255) NOT NULL," +
+                "RealName VARCHAR(255)," +
+                "NationalityID INT NOT NULL," +
+                "DebutYear YEAR," +
+                "FOREIGN KEY (NationalityID) REFERENCES Nationality(NationalityID) ON DELETE RESTRICT);";
+
+        String createAlbumTable = "CREATE TABLE IF NOT EXISTS Album (" +
+                "AlbumID INT AUTO_INCREMENT PRIMARY KEY," +
+                "Title VARCHAR(255) NOT NULL," +
+                "ReleaseDate DATE," +
+                "SingerID INT NOT NULL," +
+                "FOREIGN KEY (SingerID) REFERENCES Singer(SingerID) ON DELETE RESTRICT);";
+
+        String createSongTable = "CREATE TABLE IF NOT EXISTS Song (" +
+                "SongID INT AUTO_INCREMENT PRIMARY KEY," +
+                "Title VARCHAR(255) NOT NULL," +
+                "ReleaseDate DATE," +
+                "SingerID INT NOT NULL," +
+                "FOREIGN KEY (SingerID) REFERENCES Singer(SingerID) ON DELETE RESTRICT)";
+
+        String createNationalityTable = "CREATE TABLE IF NOT EXISTS Nationality (" +
+                "NationalityID INT AUTO_INCREMENT PRIMARY KEY," +
+                "CountryName VARCHAR(255) NOT NULL," +
+                "MusicStreamers INT);";
+
+        stmt.executeUpdate(createNationalityTable);
+        stmt.executeUpdate(createSingerTable);
+        stmt.executeUpdate(createAlbumTable);
+        stmt.executeUpdate(createSongTable);
+    }
+
+    private void parseCSVAndInsertData(String csvFilePath) {
+        String line;
+        SimpleDateFormat dateFormat = new SimpleDateFormat("dd/MM/yyyy");
+        try (BufferedReader br = new BufferedReader(new FileReader(csvFilePath))) {
+            br.readLine();
+            while ((line = br.readLine()) != null) {
+                String[] data = line.split(",");
+                if (!data[12].equals("null")) {
+                    String insertNationality = "INSERT INTO Nationality (NationalityID, CountryName, MusicStreamers) VALUES (?, ?, ?)";
+                    try (PreparedStatement pstmt = conn.prepareStatement(insertNationality)) {
+                        pstmt.setInt(1, Integer.parseInt(data[12]));
+                        pstmt.setString(2, data[13]);
+                        pstmt.setInt(3, Integer.parseInt(data[14]));
+                        pstmt.executeUpdate();
+                    }
+                }
+
+                if (!data[7].equals("null")) {
+                    String insertSinger = "INSERT INTO Singer (SingerID, StageName, RealName, NationalityID, DebutYear) VALUES (?, ?, ?, ?, ?)";
+                    try (PreparedStatement pstmt = conn.prepareStatement(insertSinger)) {
+                        pstmt.setString(1, data[7]);
+                        pstmt.setString(2, data[8]);
+                        pstmt.setString(3, data[9]);
+                        pstmt.setInt(4, Integer.parseInt(data[10]));
+                        pstmt.setString(5, data[11]);
+                        pstmt.executeUpdate();
+                    }
+                }
+
+                if (!data[3].equals("null")) {
+                    String insertAlbum = "INSERT INTO Album (AlbumID, Title, ReleaseDate, SingerID) VALUES (?, ?, ?, ?)";
+                    try (PreparedStatement pstmt = conn.prepareStatement(insertAlbum)) {
+                        pstmt.setString(1, data[3]);
+                        pstmt.setString(2, data[4]);
+                        pstmt.setDate(3, new Date(dateFormat.parse(data[5]).getTime()));
+                        pstmt.setInt(4, Integer.parseInt(data[6]));
+                        pstmt.executeUpdate();
+                    } catch (ParseException e) {
+                        throw new RuntimeException(e);
+                    }
+                }
+
+                if (!data[0].equals("null")) {
+                    String insertSong = "INSERT INTO Song (SongID, Title, SingerID) VALUES (?, ?, ?)";
+                    try (PreparedStatement pstmt = conn.prepareStatement(insertSong)) {
+                        pstmt.setInt(1, Integer.parseInt(data[0]));
+                        pstmt.setString(2, data[1]);
+                        pstmt.setInt(3, Integer.parseInt(data[2]));
+                        pstmt.executeUpdate();
+                    }
+                }
+            }
+        } catch (IOException | SQLException e) {
+            e.printStackTrace();
+        }
+    }
+
+    public void deleteNationality(int nationalityID) {
+        System.out.println("Deleting Nationality");
+        String deleteNationality = "DELETE FROM Nationality WHERE NationalityID = ?";
+        try (PreparedStatement pstmt = conn.prepareStatement(deleteNationality)) {
+            pstmt.setInt(1, nationalityID);
+            pstmt.executeUpdate();
+        } catch (SQLException e) {
+            System.out.println(e.getMessage());
+        }
+    }
+
+    public void deleteSinger(int singerID) {
+        System.out.println("Deleting Singer");
+        String deleteSinger = "DELETE FROM Singer WHERE SingerID = ?";
+        try (PreparedStatement pstmt = conn.prepareStatement(deleteSinger)) {
+            pstmt.setInt(1, singerID);
+            pstmt.executeUpdate();
+        } catch (SQLException e) {
+            System.out.println(e.getMessage());
+        }
+    }
+
+    public void query1() throws SQLException {
+        System.out.println("Countries with more than 1,000,000 music streamers.");
+        String query = "SELECT CountryName, SUM(MusicStreamers) AS TotalMusicStreamers " +
+                "FROM Nationality " +
+                "GROUP BY CountryName " +
+                "HAVING TotalMusicStreamers > 1000000";
+        ResultSet rs = stmt.executeQuery(query);
+        while (rs.next()) {
+            System.out.println(rs.getString("CountryName"));
+        }
+    }
+
+    public void query2() throws SQLException {
+        System.out.println("Singers with more than 1 album.");
+        String query = "SELECT Singer.StageName," +
+                "COUNT(Album.AlbumID) AS NumberOfAlbums " +
+                "FROM Singer " +
+                "JOIN Album ON Singer.SingerID = Album.SingerID " +
+                "GROUP BY Singer.SingerID " +
+                "HAVING COUNT(Album.AlbumID) > 1";
+
+        ResultSet rs = stmt.executeQuery(query);
+        while (rs.next()) {
+            System.out.println(rs.getString("StageName"));
+        }
+    }
+}
+
